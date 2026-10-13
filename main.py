@@ -9,13 +9,13 @@ bot=telebot.TeleBot(token,parse_mode="HTML")
 
 @bot.message_handler(commands=["start"])
 def start(message):
-	bot.reply_to(message,"𝐒𝐄𝐍𝐃 𝐘𝐎𝐔𝐑 𝐂𝐎𝐌𝐁𝐎 𝐅𝐈𝐋𝐄")
+	bot.reply_to(message,"هلو يابه تشيكر 28$ دز ملفك كومبو...")
 @bot.message_handler(content_types=["document"])
 def main(message):
 	dd = 0
 	live = 0
 	ch = 0
-	ko = (bot.reply_to(message, "𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐘𝐎𝐔𝐑 𝐂𝐀𝐑𝐃𝐒...⌛").message_id)
+	ko = (bot.reply_to(message, "حبدي افحص انطيني مجال").message_id)
 	ee = bot.download_file(bot.get_file(message.document.file_id).file_path)
 	with open("combo.txt", "wb") as w:
 		w.write(ee)
@@ -33,35 +33,35 @@ def main(message):
 				try:
 					bank=(data['bank']['name'])
 				except:
-					bank=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
+					bank=('مامعروف')
 				try:
 					emj=(data['country']['emoji'])
 				except:
-					emj=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
+					emj=('مامعروف')
 				try:
 					cn=(data['country']['name'])
 				except:
-					cn=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
+					cn=('شمدريني')
 				try:
 					dicr=(data['scheme'])
 				except:
-					dicr=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
+					dicr=('ما اعرف')
 				try:
 					typ=(data['type'])
 				except:
-					typ=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
+					typ=('مدتطلع')
 				try:
 					url=(data['bank']['url'])
 				except:
 					url=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
 				mes = types.InlineKeyboardMarkup(row_width=1)
-				cm1 = types.InlineKeyboardButton(f"• {cc} •", callback_data='u8')
-				cm2 = types.InlineKeyboardButton(f"• 𝐂𝐇𝐀𝐑𝐆𝐄𝐃 ✅: [ {ch} ] •", callback_data='x')
-				cm3 = types.InlineKeyboardButton(f"• 𝐋𝐈𝐕𝐄 ✅ : [ {live} ] •", callback_data='x')
-				cm4 = types.InlineKeyboardButton(f"• 𝐃𝐄𝐀𝐃 ❌ : [ {dd} ] •", callback_data='x')
-				cm5 = types.InlineKeyboardButton(f"• 𝐓𝐎𝐓𝐀𝐋 👻 : [ {total} ] •", callback_data='x')
+				cm1 = types.InlineKeyboardButton(f" {cc} ", callback_data='u8')
+				cm2 = types.InlineKeyboardButton(f"بيها فلوس✅ [ {ch} ] •", callback_data='x')
+				cm3 = types.InlineKeyboardButton(f"تشتغل ✅ : [ {live} ] •", callback_data='x')
+				cm4 = types.InlineKeyboardButton(f"ميته ❌ : [ {dd} ] •", callback_data='x')
+				cm5 = types.InlineKeyboardButton(f"كلهن  : [ {total} ] •", callback_data='x')
 				mes.add(cm1, cm2, cm3, cm4, cm5)
-				bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='''𝐖𝐀𝐈𝐓 𝐅𝐎𝐑 𝐏𝐑𝐎𝐂𝐄𝐒𝐒𝐈𝐍𝐆 𝐁𝐘 ➜ 𖣘𝐃𝐞𝐯𝐢𝐥 𝐎𝐰𝐧𝐞𝐫 ⚡ ''', reply_markup=mes)
+				bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text='''انطيني مجال اكمل يروحه ''', reply_markup=mes)
 				
 				try:
 					last = str(Tele(cc))
